@@ -1,0 +1,156 @@
+
+/* ===== GLOBAL RESETS & BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* ===== TOP SECTION (Profile) ===== */
+.topsection {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* left fixed, right flexible */
+  gap: 2rem;
+  align-items: start;
+
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: gray;
+
+  /* smooth animation for hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.topsection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  background-color: #f0f8ff; /* optional hover colour */
+}
+
+/* left side: image + name stacked */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid black;
+}
+
+.left-side p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* right side: about text */
+.right-side h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.right-side p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE for topsection */
+@media (max-width: 768px) {
+  .topsection {
+    grid-template-columns: 1fr; /* stack */
+    text-align: center;
+  }
+
+  .right-side {
+    margin-top: 1.5rem; /* spacing between image block and text */
+  }
+}
+
+/* ===== BOTTOM SECTION (Hobbies + Aspirations) ===== */
+.bottomsection {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+/* each box */
+.bottomsection > div {
+  background-color: gray;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* hover effect for each box */
+.bottomsection > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  background-color: #f0f8ff; /* optional hover colour */
+}
+
+/* underline all h3 headings */
+.bottomsection h3 {
+  text-decoration: underline;
+  margin-bottom: 0.3rem;
+}
+.bottomsection h2 {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+/* lists */
+.bottomsection ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+
+.bottomsection li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE: stack them and control order */
+@media (max-width: 768px) {
+  .bottomsection {
+    grid-template-columns: 1fr; /* stack */
+  }
+
+  #hobbies {
+    order: 1;
+  }
+
+  #Aspirations {
+    order: 2;
+  }
+}
+
